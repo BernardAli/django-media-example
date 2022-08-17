@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Example</title>
+</head>
+<body>
+    {% for image in all_images%}
+        <div>
+            <img src="{{ image.image_field.url }}" width="250px">
+            <a href="{{image.file_field.url }}">Download</a>
+        </div>
+    {% empty %}
+        <p>No image added</p>
+    {% endfor %}
+</body>
+</html>
